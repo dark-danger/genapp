@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="GenApp - Professional IoT ecosystem platform for home automation, robotics, IoT vehicles, and custom hardware control." />
+  <meta name="theme-color" content="#0F172A" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  
+  <title>GenApp — IoT Control Platform</title>
+  
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/design-system.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/themes.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/dashboard.css" />
+  <link rel="stylesheet" href="/css/controls.css" />
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="splash-content">
+      <div class="splash-logo">
+        <div class="logo-ring"></div>
+        <div class="logo-ring ring-2"></div>
+        <div class="logo-ring ring-3"></div>
+        <div class="logo-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logo-grad-splash" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2563EB" />
+                <stop offset="100%" stop-color="#06B6D4" />
+              </linearGradient>
+            </defs>
+            <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" stroke="url(#logo-grad-splash)" stroke-width="3.5" stroke-linejoin="round" />
+            <path d="M44,22 C40,16 30,16 24,20 C18,25 18,35 24,40 C30,45 42,43 44,34 L32,34" stroke="url(#logo-grad-splash)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="32" cy="34" r="3.5" fill="#22C55E" />
+            <circle cx="44" cy="22" r="3.5" fill="#2563EB" />
+            <circle cx="24" cy="40" r="3.5" fill="#06B6D4" />
+          </svg>
+        </div>
+      </div>
+      <h1 class="splash-title">GenApp</h1>
+      <p class="splash-tagline">One App. Unlimited Devices. Infinite Possibilities.</p>
+      <div class="splash-loader">
+        <div class="loader-bar"></div>
+      </div>
+    </div>
+    <div class="splash-particles" id="splash-particles"></div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" class="app-container" style="display:none;">
+    <!-- Sidebar Navigation (Desktop) -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="sidebar-logo-icon">
+            <defs>
+              <linearGradient id="logo-grad-sidebar" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2563EB" />
+                <stop offset="100%" stop-color="#06B6D4" />
+              </linearGradient>
+            </defs>
+            <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" stroke="url(#logo-grad-sidebar)" stroke-width="3.5" stroke-linejoin="round" />
+            <path d="M44,22 C40,16 30,16 24,20 C18,25 18,35 24,40 C30,45 42,43 44,34 L32,34" stroke="url(#logo-grad-sidebar)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="32" cy="34" r="3.5" fill="#22C55E" />
+            <circle cx="44" cy="22" r="3.5" fill="#2563EB" />
+            <circle cx="24" cy="40" r="3.5" fill="#06B6D4" />
+          </svg>
+          <span class="sidebar-brand">GenApp</span>
+        </div>
+        <button id="sidebar-toggle" class="sidebar-collapse-btn" aria-label="Toggle sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+      </div>
+      
+      <nav class="sidebar-nav" id="sidebar-nav">
+        <div class="nav-section">
+          <span class="nav-section-title">Main</span>
+          <a href="#/dashboard" class="nav-item active" data-route="dashboard" id="nav-dashboard">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            <span class="nav-label">Dashboard</span>
+          </a>
+          <a href="#/devices" class="nav-item" data-route="devices" id="nav-devices">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h.01"/><path d="M14 12h4"/></svg>
+            <span class="nav-label">Devices</span>
+          </a>
+        </div>
+        
+        <div class="nav-section">
+          <span class="nav-section-title">Controls</span>
+          <a href="#/controls" class="nav-item" data-route="controls" id="nav-controls">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>
+            <span class="nav-label">Control Builder</span>
+            <span class="nav-badge">★</span>
+          </a>
+          <a href="#/car-controller" class="nav-item" data-route="car-controller" id="nav-car-controller">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17a2 2 0 01-2-2V9a2 2 0 012-2h1l2-3h8l2 3h1a2 2 0 012 2v6a2 2 0 01-2 2M5 17v2m14-2v2"/><circle cx="7.5" cy="14.5" r="1.5"/><circle cx="16.5" cy="14.5" r="1.5"/></svg>
+            <span class="nav-label">Car Controller</span>
+          </a>
+          <a href="#/gesture-control" class="nav-item" data-route="gesture-control" id="nav-gesture-control">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 11V6a2 2 0 00-4 0v5M14 10V4a2 2 0 00-4 0v6M10 9.5V6a2 2 0 00-4 0v8l-1.46-1.46a2 2 0 00-2.83 2.83L6 20h10a4 4 0 004-4v-5a2 2 0 00-4 0"/></svg>
+            <span class="nav-label">Gesture Control</span>
+          </a>
+          <a href="#/home-automation" class="nav-item" data-route="home-automation" id="nav-home-automation">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+            <span class="nav-label">Home Automation</span>
+          </a>
+        </div>
+        
+        <div class="nav-section">
+          <span class="nav-section-title">System</span>
+          <a href="#/automation" class="nav-item" data-route="automation" id="nav-automation">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,3 21,3 21,8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21,16 21,21 16,21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+            <span class="nav-label">Automation</span>
+          </a>
+          <a href="#/sensor-dashboard" class="nav-item" data-route="sensor-dashboard" id="nav-sensor-dashboard">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span class="nav-label">Sensor Data</span>
+          </a>
+          <a href="#/profile" class="nav-item" data-route="profile" id="nav-profile">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="nav-label">Profile</span>
+          </a>
+        </div>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <div class="sidebar-version">v2.0.0</div>
+      </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header id="mobile-header" class="mobile-header">
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="mobile-header-title">
+        <svg viewBox="0 0 64 64" fill="none" class="mobile-logo-icon">
+            <defs>
+              <linearGradient id="logo-grad-mobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2563EB" />
+                <stop offset="100%" stop-color="#06B6D4" />
+              </linearGradient>
+            </defs>
+            <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" stroke="url(#logo-grad-mobile)" stroke-width="3.5" stroke-linejoin="round" />
+            <path d="M44,22 C40,16 30,16 24,20 C18,25 18,35 24,40 C30,45 42,43 44,34 L32,34" stroke="url(#logo-grad-mobile)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="32" cy="34" r="3.5" fill="#22C55E" />
+            <circle cx="44" cy="22" r="3.5" fill="#2563EB" />
+            <circle cx="24" cy="40" r="3.5" fill="#06B6D4" />
+        </svg>
+        <span>GenApp</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <a href="#/devices" id="mobile-connection-indicator" class="mobile-menu-btn" aria-label="Connection Status" style="text-decoration:none;">
+          <span class="status-dot disconnected" id="mobile-header-conn-dot" style="display:inline-block; border-radius:50%; width:10px; height:10px;"></span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+      <div id="page-container" class="page-container"></div>
+    </main>
+
+    <!-- Mobile Bottom Nav — 5 Tabs -->
+    <nav id="mobile-bottom-nav" class="mobile-bottom-nav">
+      <a href="#/dashboard" class="bottom-nav-item active" data-route="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <span>Dashboard</span>
+      </a>
+      <a href="#/devices" class="bottom-nav-item" data-route="devices">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h.01M10 12h.01"/><path d="M14 12h4"/></svg>
+        <span>Devices</span>
+      </a>
+      <a href="#/controls" class="bottom-nav-item" data-route="controls">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>
+        <span>Controls</span>
+      </a>
+      <a href="#/automation" class="bottom-nav-item" data-route="automation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16,3 21,3 21,8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21,16 21,21 16,21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+        <span>Automation</span>
+      </a>
+      <a href="#/profile" class="bottom-nav-item" data-route="profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Profile</span>
+      </a>
+    </nav>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- App Entry -->
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

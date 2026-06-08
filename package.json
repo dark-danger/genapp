@@ -1,0 +1,29 @@
+{
+  "name": "genapp",
+  "version": "1.0.0",
+  "description": "GenApp - Ultimate IoT Control Platform",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:android": "vite build && npx cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
+    "@capacitor/device": "^8.0.2",
+    "@capacitor/haptics": "^8.0.2",
+    "@capacitor/local-notifications": "^8.2.0",
+    "@capacitor/preferences": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.2",
+    "chart.js": "^4.4.7",
+    "cordova-plugin-bluetooth-serial": "^0.4.7",
+    "interactjs": "^1.10.27",
+    "mqtt": "^5.10.4"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}

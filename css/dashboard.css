@@ -1,0 +1,344 @@
+/* ============================================================
+   GenApp — Dashboard Styles
+   ============================================================ */
+
+/* === Dashboard Grid === */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.dashboard-grid-wide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+/* === Welcome Banner === */
+.welcome-banner {
+  background: var(--gradient-mesh), var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-8);
+  margin-bottom: var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(var(--color-primary-rgb), 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.welcome-title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+}
+
+.welcome-subtitle {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-6);
+  line-height: 1.6;
+}
+
+/* === Quick Actions === */
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: var(--space-3);
+}
+
+.quick-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-3);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--divider);
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.quick-action-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.quick-action-btn:hover {
+  background: var(--bg-surface-hover);
+  border-color: rgba(var(--color-primary-rgb), 0.2);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.quick-action-btn:active {
+  transform: scale(0.95);
+}
+
+/* === Device List (Compact) === */
+.device-list-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.device-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  transition: background var(--duration-fast);
+  cursor: pointer;
+}
+
+.device-list-item:hover {
+  background: var(--bg-surface-hover);
+}
+
+.device-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.device-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.device-name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.device-type {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+/* === Activity Feed === */
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--divider);
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.activity-text {
+  flex: 1;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.activity-text strong {
+  color: var(--text-primary);
+}
+
+.activity-time {
+  font-size: var(--text-xs);
+  color: var(--text-disabled);
+  white-space: nowrap;
+}
+
+/* === Connection Status Card === */
+.connection-status-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.connection-status-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.connection-status-icon.disconnected {
+  background: rgba(var(--color-danger-rgb), 0.1);
+  border: 2px dashed rgba(var(--color-danger-rgb), 0.3);
+}
+
+.connection-status-icon.connected {
+  background: rgba(var(--color-success-rgb), 0.1);
+  border: 2px solid rgba(var(--color-success-rgb), 0.3);
+  animation: connection-pulse 2s ease-in-out infinite;
+}
+
+.connect-options {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+
+/* === Room Grid === */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.room-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.room-card:hover {
+  border-color: rgba(var(--color-primary-rgb), 0.2);
+}
+
+.room-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.room-name {
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+
+.room-device-count {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.room-devices {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: var(--space-2);
+}
+
+.room-device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  text-align: center;
+}
+
+.room-device:hover {
+  background: var(--bg-surface-hover);
+}
+
+.room-device.active {
+  background: rgba(var(--color-primary-rgb), 0.1);
+  border-color: rgba(var(--color-primary-rgb), 0.25);
+}
+
+.room-device-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: var(--space-1);
+  color: var(--text-muted);
+}
+
+.room-device.active .room-device-icon {
+  color: var(--color-primary);
+}
+
+.room-device-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.room-device-name {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.room-device.active .room-device-name {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid-wide {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-banner {
+    padding: var(--space-6);
+  }
+
+  .room-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

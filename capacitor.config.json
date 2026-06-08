@@ -1,0 +1,5 @@
+{
+  "appId": "com.genapp.iot",
+  "appName": "GenApp",
+  "webDir": "dist"
+}

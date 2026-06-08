@@ -1,0 +1,95 @@
+/* ============================================================
+   GenApp — Theme System
+   Dark (Primary) + Light Theme
+   ============================================================ */
+
+/* === Dark Theme (Default) === */
+[data-theme="dark"] {
+  --bg-primary: #0F172A;
+  --bg-secondary: #131C31;
+  --bg-surface: #1E293B;
+  --bg-surface-hover: #263347;
+  --bg-elevated: #273449;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-tertiary: #64748B;
+  --text-disabled: #475569;
+
+  --glass-bg: rgba(30, 41, 59, 0.6);
+  --glass-border: rgba(148, 163, 184, 0.1);
+  --glass-bg-hover: rgba(30, 41, 59, 0.8);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  --input-bg: rgba(15, 23, 42, 0.6);
+  --input-border: rgba(148, 163, 184, 0.15);
+  --input-border-focus: var(--color-primary);
+
+  --card-bg: rgba(30, 41, 59, 0.5);
+  --card-border: rgba(148, 163, 184, 0.08);
+
+  --scrollbar-thumb: rgba(148, 163, 184, 0.2);
+  --divider: rgba(148, 163, 184, 0.08);
+
+  color-scheme: dark;
+}
+
+/* === Light Theme === */
+[data-theme="light"] {
+  --bg-primary: #F1F5F9;
+  --bg-secondary: #E2E8F0;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #F8FAFC;
+  --bg-elevated: #FFFFFF;
+  --bg-overlay: rgba(0, 0, 0, 0.3);
+
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --text-tertiary: #94A3B8;
+  --text-disabled: #CBD5E1;
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-bg-hover: rgba(255, 255, 255, 0.85);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  --input-bg: #FFFFFF;
+  --input-border: rgba(0, 0, 0, 0.12);
+  --input-border-focus: var(--color-primary);
+
+  --card-bg: #FFFFFF;
+  --card-border: rgba(0, 0, 0, 0.06);
+
+  --scrollbar-thumb: rgba(0, 0, 0, 0.15);
+  --divider: rgba(0, 0, 0, 0.06);
+
+  color-scheme: light;
+}
+
+/* Apply theme to body */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color var(--duration-slow) var(--ease-out),
+              color var(--duration-slow) var(--ease-out);
+}
+
+/* Theme-aware scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
+
+/* Theme-aware selection */
+[data-theme="light"] ::selection {
+  background: rgba(var(--color-primary-rgb), 0.2);
+  color: #0F172A;
+}
