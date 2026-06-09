@@ -1,5 +1,6 @@
 /* ============================================================
    GenApp — Dashboard Styles
+   Sea Green IoT Control Center
    ============================================================ */
 
 /* === Dashboard Grid === */
@@ -33,7 +34,7 @@
   right: 0;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(var(--color-primary-rgb), 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(46, 139, 87, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -73,6 +74,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
+  min-height: 80px;
 }
 
 .quick-action-btn svg {
@@ -82,9 +84,10 @@
 
 .quick-action-btn:hover {
   background: var(--bg-surface-hover);
-  border-color: rgba(var(--color-primary-rgb), 0.2);
+  border-color: rgba(46, 139, 87, 0.2);
   color: var(--text-primary);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 139, 87, 0.1);
 }
 
 .quick-action-btn:active {
@@ -106,6 +109,7 @@
   border-radius: var(--radius-md);
   transition: background var(--duration-fast);
   cursor: pointer;
+  min-height: 56px;
 }
 
 .device-list-item:hover {
@@ -190,29 +194,29 @@
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-xl);
-  padding: var(--space-8);
+  padding: var(--space-6);
   text-align: center;
 }
 
 .connection-status-icon {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   margin: 0 auto var(--space-6);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .connection-status-icon.disconnected {
-  background: rgba(var(--color-danger-rgb), 0.1);
-  border: 2px dashed rgba(var(--color-danger-rgb), 0.3);
+  background: rgba(229, 62, 62, 0.08);
+  border: 2px dashed rgba(229, 62, 62, 0.25);
 }
 
 .connection-status-icon.connected {
-  background: rgba(var(--color-success-rgb), 0.1);
-  border: 2px solid rgba(var(--color-success-rgb), 0.3);
+  background: rgba(46, 139, 87, 0.1);
+  border: 2px solid rgba(46, 139, 87, 0.3);
   animation: connection-pulse 2s ease-in-out infinite;
 }
 
@@ -227,8 +231,8 @@
 /* === Room Grid === */
 .room-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
 }
 
 .room-card {
@@ -240,7 +244,7 @@
 }
 
 .room-card:hover {
-  border-color: rgba(var(--color-primary-rgb), 0.2);
+  border-color: rgba(46, 139, 87, 0.15);
 }
 
 .room-card-header {
@@ -278,6 +282,7 @@
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
   text-align: center;
+  min-height: 64px;
 }
 
 .room-device:hover {
@@ -285,8 +290,8 @@
 }
 
 .room-device.active {
-  background: rgba(var(--color-primary-rgb), 0.1);
-  border-color: rgba(var(--color-primary-rgb), 0.25);
+  background: rgba(46, 139, 87, 0.1);
+  border-color: rgba(46, 139, 87, 0.25);
 }
 
 .room-device-icon {
@@ -329,16 +334,39 @@
   }
 
   .welcome-banner {
-    padding: var(--space-6);
+    padding: var(--space-5);
   }
 
   .room-grid {
     grid-template-columns: 1fr;
   }
+
+  .connection-status-card {
+    padding: var(--space-5);
+  }
+
+  .connection-status-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 480px) {
   .dashboard-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .welcome-banner {
+    padding: var(--space-4);
+  }
+
+  .welcome-title {
+    font-size: var(--text-xl);
+  }
+
+  .quick-actions {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

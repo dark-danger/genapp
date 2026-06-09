@@ -257,15 +257,15 @@ function formatName(key) {
 function getSensorColor(key) {
   const colors = {
     temperature: '#EF4444', // Red Danger
-    humidity: '#06B6D4',    // Cyan Secondary
+    humidity: '#40E0B0',    // Bright Teal-Green Accent
     gas: '#F59E0B',         // Amber Warning
     smoke: '#EF4444',       // Red Danger
-    ultrasonic: '#3B82F6',  // Blue Light
-    voltage: '#22C55E',     // Green Accent
+    ultrasonic: '#3CB371',  // Medium Sea Green Secondary
+    voltage: '#2E8B57',     // Sea Green Primary
     current: '#10B981',     // Emerald Success
     ir: '#6366F1'           // Indigo
   };
-  return colors[key] || '#2563EB';
+  return colors[key] || '#2E8B57';
 }
 
 function downloadFile(content, filename, type) {

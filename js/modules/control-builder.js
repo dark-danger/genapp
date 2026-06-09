@@ -38,10 +38,10 @@ const WIDGET_TYPES = [
 ];
 
 const COLORS = [
-  '#2563EB', // Primary Blue
-  '#3B82F6', // Blue Light
-  '#06B6D4', // Cyan Secondary
-  '#22C55E', // Green Accent
+  '#2E8B57', // Sea Green Primary
+  '#3CB371', // Medium Sea Green Secondary
+  '#40E0B0', // Bright Teal-Green Accent
+  '#22C55E', // Green Success
   '#10B981', // Emerald Success
   '#F59E0B', // Amber Warning
   '#EF4444', // Red Danger
@@ -299,7 +299,7 @@ function addWidget(type, x, y) {
     y: Math.round(y / 20) * 20,
     width: def.defaultW,
     height: def.defaultH,
-    color: '#2563EB',
+    color: '#2E8B57',
     label: def.label,
     command: '',
     mqttTopic: '',
@@ -720,27 +720,27 @@ function loadTemplate(name) {
 
   const templates = {
     car: [
-      { type: 'button', x: 140, y: 20, width: 100, height: 50, color: '#2563EB', label: 'Forward', command: 'F' },
-      { type: 'button', x: 20, y: 80, width: 100, height: 50, color: '#3B82F6', label: 'Left', command: 'L' },
+      { type: 'button', x: 140, y: 20, width: 100, height: 50, color: '#2E8B57', label: 'Forward', command: 'F' },
+      { type: 'button', x: 20, y: 80, width: 100, height: 50, color: '#3CB371', label: 'Left', command: 'L' },
       { type: 'button', x: 140, y: 80, width: 100, height: 50, color: '#EF4444', label: 'Stop', command: 'S' },
-      { type: 'button', x: 260, y: 80, width: 100, height: 50, color: '#3B82F6', label: 'Right', command: 'R' },
-      { type: 'button', x: 140, y: 140, width: 100, height: 50, color: '#2563EB', label: 'Reverse', command: 'B' },
+      { type: 'button', x: 260, y: 80, width: 100, height: 50, color: '#3CB371', label: 'Right', command: 'R' },
+      { type: 'button', x: 140, y: 140, width: 100, height: 50, color: '#2E8B57', label: 'Reverse', command: 'B' },
       { type: 'slider', x: 20, y: 210, width: 340, height: 50, color: '#22C55E', label: 'Motor Speed', command: 'speed' },
-      { type: 'gauge', x: 390, y: 20, width: 160, height: 120, color: '#06B6D4', label: 'Temperature', command: 'temperature' },
+      { type: 'gauge', x: 390, y: 20, width: 160, height: 120, color: '#40E0B0', label: 'Temperature', command: 'temperature' },
       { type: 'switch', x: 390, y: 160, width: 100, height: 50, color: '#F59E0B', label: 'Lights', command: 'lights' },
     ],
     home: [
       { type: 'switch', x: 20, y: 20, width: 140, height: 50, color: '#F59E0B', label: 'Living Light', command: 'living_light' },
-      { type: 'switch', x: 180, y: 20, width: 140, height: 50, color: '#06B6D4', label: 'Bedroom Light', command: 'bedroom_light' },
-      { type: 'slider', x: 20, y: 90, width: 300, height: 50, color: '#2563EB', label: 'Fan Speed', command: 'fan_speed' },
+      { type: 'switch', x: 180, y: 20, width: 140, height: 50, color: '#40E0B0', label: 'Bedroom Light', command: 'bedroom_light' },
+      { type: 'slider', x: 20, y: 90, width: 300, height: 50, color: '#2E8B57', label: 'Fan Speed', command: 'fan_speed' },
       { type: 'sensor', x: 20, y: 160, width: 140, height: 80, color: '#EF4444', label: 'Temp Sensor', command: 'temperature' },
-      { type: 'sensor', x: 180, y: 160, width: 140, height: 80, color: '#06B6D4', label: 'Humid Sensor', command: 'humidity' },
+      { type: 'sensor', x: 180, y: 160, width: 140, height: 80, color: '#40E0B0', label: 'Humid Sensor', command: 'humidity' },
       { type: 'button', x: 20, y: 260, width: 140, height: 50, color: '#10B981', label: 'Unlock Door', command: 'unlock' },
       { type: 'button', x: 180, y: 260, width: 140, height: 50, color: '#EF4444', label: 'Lock Door', command: 'lock' },
     ],
     sensor: [
       { type: 'gauge', x: 20, y: 20, width: 160, height: 120, color: '#EF4444', label: 'Core Temp', command: 'temperature' },
-      { type: 'gauge', x: 200, y: 20, width: 160, height: 120, color: '#06B6D4', label: 'Room Humidity', command: 'humidity' },
+      { type: 'gauge', x: 200, y: 20, width: 160, height: 120, color: '#40E0B0', label: 'Room Humidity', command: 'humidity' },
       { type: 'gauge', x: 380, y: 20, width: 160, height: 120, color: '#F59E0B', label: 'Ambient Gas', command: 'gas' },
       { type: 'chart', x: 20, y: 160, width: 520, height: 180, color: '#22C55E', label: 'Real-time Chart', command: 'temperature' },
     ]

@@ -133,7 +133,7 @@ class GenApp {
       particle.style.animationDelay = Math.random() * 4 + 's';
       particle.style.animationDuration = (3 + Math.random() * 3) + 's';
       
-      const colors = ['#2563EB', '#06B6D4', '#22C55E'];
+      const colors = ['#2E8B57', '#3CB371', '#40E0B0'];
       particle.style.background = colors[Math.floor(Math.random() * colors.length)];
       
       container.appendChild(particle);

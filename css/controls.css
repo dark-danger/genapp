@@ -1,11 +1,11 @@
 /* ============================================================
-   GenApp — Controls & IoT Widget Styles
+   GenApp — Controls & IoT Widget Styles (Futuristic Design)
    ============================================================ */
 
 /* === Control Page Layout === */
 .control-page {
   display: grid;
-  grid-template-columns: 1fr 280px;
+  grid-template-columns: 1fr 300px;
   gap: var(--space-6);
   align-items: start;
 }
@@ -13,13 +13,13 @@
 .control-main {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .control-sidebar {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 /* === D-Pad Controller === */
@@ -28,8 +28,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-6);
-  gap: var(--space-6);
+  padding: var(--space-8);
+  gap: var(--space-8);
+  background: radial-gradient(circle at center, rgba(24, 24, 24, 0.4), rgba(10, 10, 10, 0.6));
+  border-radius: var(--radius-xl);
 }
 
 .dpad-grid {
@@ -38,9 +40,14 @@
     '. up .'
     'left stop right'
     '. down .';
-  grid-template-columns: repeat(3, 80px);
-  grid-template-rows: repeat(3, 80px);
-  gap: var(--space-2);
+  grid-template-columns: repeat(3, 90px);
+  grid-template-rows: repeat(3, 90px);
+  gap: var(--space-3);
+  background: rgba(10, 10, 10, 0.4);
+  padding: var(--space-4);
+  border-radius: var(--radius-2xl);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6), 0 1px 1px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .dpad-btn {
@@ -48,37 +55,47 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
   border-radius: var(--radius-lg);
-  background: var(--bg-surface);
-  border: 1px solid var(--divider);
+  background: linear-gradient(135deg, var(--bg-surface-hover), var(--bg-surface));
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--text-secondary);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   cursor: pointer;
-  transition: all var(--duration-fast) var(--ease-out);
+  transition: all var(--duration-fast) var(--ease-spring);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .dpad-btn svg {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  transition: transform var(--duration-fast);
 }
 
 .dpad-btn:hover {
-  background: var(--bg-surface-hover);
-  border-color: rgba(var(--color-primary-rgb), 0.3);
+  background: linear-gradient(135deg, var(--bg-surface-hover), var(--bg-elevated));
+  border-color: rgba(var(--color-primary-rgb), 0.4);
+  color: var(--text-primary);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), 0 0 10px rgba(var(--color-primary-rgb), 0.15);
+}
+
+.dpad-btn:hover svg {
+  transform: scale(1.1);
 }
 
 .dpad-btn:active,
 .dpad-btn.pressed {
-  background: rgba(var(--color-primary-rgb), 0.2);
+  background: linear-gradient(135deg, rgba(var(--color-primary-rgb), 0.25), rgba(var(--color-primary-rgb), 0.1));
   border-color: var(--color-primary);
-  color: var(--color-primary);
-  transform: scale(0.93);
+  color: var(--color-primary-light);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 15px rgba(var(--color-primary-rgb), 0.3);
+  transform: scale(0.92);
 }
 
 .dpad-btn-forward { grid-area: up; }
@@ -88,77 +105,100 @@
 
 .dpad-btn-stop {
   grid-area: stop;
-  background: rgba(var(--color-danger-rgb), 0.1);
-  border-color: rgba(var(--color-danger-rgb), 0.2);
+  background: linear-gradient(135deg, rgba(var(--color-danger-rgb), 0.15), rgba(var(--color-danger-rgb), 0.05));
+  border-color: rgba(var(--color-danger-rgb), 0.3);
   color: var(--color-danger);
+  border-radius: var(--radius-lg);
+}
+
+.dpad-btn-stop svg {
+  fill: var(--color-danger);
 }
 
 .dpad-btn-stop:hover {
-  background: rgba(var(--color-danger-rgb), 0.2);
+  background: linear-gradient(135deg, rgba(var(--color-danger-rgb), 0.25), rgba(var(--color-danger-rgb), 0.1));
+  border-color: var(--color-danger);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), 0 0 15px rgba(var(--color-danger-rgb), 0.3);
 }
 
 .dpad-btn-stop:active,
 .dpad-btn-stop.pressed {
   background: var(--color-danger);
   color: white;
+  box-shadow: 0 0 25px rgba(var(--color-danger-rgb), 0.6);
+}
+
+.dpad-btn-stop:active svg,
+.dpad-btn-stop.pressed svg {
+  fill: white;
 }
 
 /* === Extra Controls === */
 .extra-controls {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-4);
   justify-content: center;
+  width: 100%;
 }
 
 .control-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
   background: var(--bg-surface);
-  border: 1px solid var(--divider);
-  color: var(--text-muted);
-  font-size: var(--text-xs);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
   font-weight: 600;
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-out);
+  box-shadow: var(--shadow-sm);
 }
 
 .control-btn:hover {
   background: var(--bg-surface-hover);
   color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .control-btn.active {
-  background: rgba(var(--color-primary-rgb), 0.15);
+  background: rgba(var(--color-primary-rgb), 0.18);
   border-color: var(--color-primary);
-  color: var(--color-primary);
+  color: var(--color-primary-light);
+  box-shadow: 0 0 15px rgba(var(--color-primary-rgb), 0.25);
 }
 
 .horn-btn:active {
   background: rgba(var(--color-warning-rgb), 0.2);
   border-color: var(--color-warning);
   color: var(--color-warning);
+  box-shadow: 0 0 15px rgba(var(--color-warning-rgb), 0.25);
 }
 
 /* === Speed Control === */
 .speed-control {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-4);
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-lg);
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-md);
 }
 
 .speed-label {
   font-size: var(--text-xs);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   white-space: nowrap;
 }
 
@@ -167,85 +207,92 @@ input[type="range"] {
   flex: 1;
   -webkit-appearance: none;
   appearance: none;
-  height: 6px;
-  background: var(--bg-elevated);
-  border-radius: 3px;
+  height: 8px;
+  background: rgba(10, 10, 10, 0.6);
+  border-radius: 4px;
   outline: none;
   cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: var(--gradient-primary);
   border: 2px solid white;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(var(--color-primary-rgb), 0.4);
+  box-shadow: 0 0 12px rgba(var(--color-primary-rgb), 0.6);
   transition: transform var(--duration-fast) var(--ease-spring);
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-  transform: scale(1.15);
+  transform: scale(1.25);
 }
 
 input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: var(--color-primary);
   border: 2px solid white;
   cursor: pointer;
+  box-shadow: 0 0 12px rgba(var(--color-primary-rgb), 0.6);
 }
 
 .speed-value {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-primary);
-  min-width: 45px;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-primary-light);
+  min-width: 55px;
   text-align: right;
+  letter-spacing: 0.5px;
 }
 
 /* === Gauge === */
 .gauge-container {
   display: flex;
   justify-content: center;
-  padding: var(--space-3) 0;
+  padding: var(--space-4) 0;
 }
 
 .gauge-svg {
-  width: 140px;
-  height: 90px;
+  width: 160px;
+  height: 100px;
 }
 
 .gauge-bg {
   fill: none;
-  stroke: var(--bg-elevated);
-  stroke-width: 8;
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 10;
 }
 
 .gauge-fill {
   fill: none;
-  stroke-width: 8;
+  stroke-width: 10;
   stroke-linecap: round;
   transition: stroke-dashoffset var(--duration-slow) var(--ease-out);
+  filter: drop-shadow(0 0 4px rgba(var(--color-primary-rgb), 0.5));
 }
 
 .gauge-value-text {
   fill: var(--text-primary);
   font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 800;
   text-anchor: middle;
 }
 
 .gauge-label-text {
   fill: var(--text-muted);
   font-size: 11px;
+  font-weight: 600;
   text-anchor: middle;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* === Telemetry Panel === */
@@ -259,8 +306,8 @@ input[type="range"]::-moz-range-thumb {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-2) 0;
-  border-bottom: 1px solid var(--divider);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .telemetry-item:last-child {
@@ -270,7 +317,9 @@ input[type="range"]::-moz-range-thumb {
 .telemetry-label {
   font-size: var(--text-xs);
   color: var(--text-muted);
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .telemetry-value {
@@ -281,30 +330,34 @@ input[type="range"]::-moz-range-thumb {
 
 /* === Emergency Stop === */
 .emergency-stop-btn {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: var(--color-danger);
+  background: linear-gradient(135deg, var(--color-danger), #b91c1c);
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
+  font-weight: 900;
+  font-family: var(--font-display);
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(var(--color-danger-rgb), 0.4),
-              inset 0 -3px 0 rgba(0,0,0,0.2);
-  transition: all var(--duration-fast) var(--ease-out);
-  border: 3px solid rgba(255,255,255,0.2);
+  box-shadow: 0 6px 25px rgba(var(--color-danger-rgb), 0.5),
+              inset 0 -4px 0 rgba(0,0,0,0.3),
+              inset 0 2px 0 rgba(255,255,255,0.2);
+  transition: all var(--duration-fast) var(--ease-spring);
+  border: 3px solid rgba(255,255,255,0.25);
 }
 
 .emergency-stop-btn:hover {
   transform: scale(1.08);
-  box-shadow: 0 6px 28px rgba(var(--color-danger-rgb), 0.5);
+  box-shadow: 0 8px 30px rgba(var(--color-danger-rgb), 0.7),
+              inset 0 -2px 0 rgba(0,0,0,0.3);
 }
 
 .emergency-stop-btn:active {
   transform: scale(0.9);
+  box-shadow: 0 2px 10px rgba(var(--color-danger-rgb), 0.4);
 }
 
 /* === Joystick === */
@@ -320,16 +373,17 @@ input[type="range"]::-moz-range-thumb {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .joystick-base {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  background: var(--bg-surface);
-  border: 2px solid var(--divider);
+  background: radial-gradient(circle at center, rgba(24, 24, 24, 0.3), rgba(10, 10, 10, 0.7));
+  border: 2px solid rgba(255, 255, 255, 0.08);
   position: relative;
+  box-shadow: inset 0 4px 16px rgba(0, 0, 0, 0.6), 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .joystick-crosshair {
@@ -341,39 +395,42 @@ input[type="range"]::-moz-range-thumb {
 .joystick-crosshair::after {
   content: '';
   position: absolute;
-  background: var(--divider);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .joystick-crosshair::before {
   top: 50%;
-  left: 10%;
-  right: 10%;
+  left: 8%;
+  right: 8%;
   height: 1px;
 }
 
 .joystick-crosshair::after {
   left: 50%;
-  top: 10%;
-  bottom: 10%;
+  top: 8%;
+  bottom: 8%;
   width: 1px;
 }
 
 .joystick-handle {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: var(--gradient-primary);
-  box-shadow: var(--shadow-glow-primary);
+  background: radial-gradient(circle at 30% 30%, var(--color-primary-light), var(--color-primary-dark));
+  box-shadow: var(--shadow-glow-primary), 0 8px 20px rgba(0,0,0,0.4);
   cursor: grab;
   z-index: 2;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .joystick-handle:active {
   cursor: grabbing;
+  background: radial-gradient(circle at 30% 30%, var(--color-secondary), var(--color-primary));
+  box-shadow: var(--shadow-glow-secondary), 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .joystick-info {
@@ -382,6 +439,10 @@ input[type="range"]::-moz-range-thumb {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   color: var(--text-muted);
+  background: rgba(10, 10, 10, 0.4);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.03);
 }
 
 /* === Steering Wheel === */
@@ -390,7 +451,7 @@ input[type="range"]::-moz-range-thumb {
   flex-direction: column;
   align-items: center;
   padding: var(--space-6);
-  gap: var(--space-6);
+  gap: var(--space-8);
 }
 
 .steering-wheel-wrapper {
@@ -399,49 +460,53 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .steering-wheel {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  border: 8px solid var(--text-muted);
+  border: 12px solid rgba(255, 255, 255, 0.12);
   position: relative;
   cursor: grab;
-  transition: border-color var(--duration-fast);
+  transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.3), inset 0 2px 10px rgba(0,0,0,0.4);
 }
 
 .steering-wheel:active {
   cursor: grabbing;
-  border-color: var(--color-primary);
+  border-color: rgba(var(--color-primary-rgb), 0.6);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.3), 0 0 20px rgba(var(--color-primary-rgb), 0.2);
 }
 
 .steering-marker {
   position: absolute;
-  top: -6px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: var(--color-primary-light);
+  box-shadow: 0 0 8px var(--color-primary);
+  border: 2px solid white;
 }
 
 .steering-wheel-spoke {
   position: absolute;
-  background: var(--text-disabled);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .spoke-h {
   top: 50%;
-  left: 20%;
-  right: 20%;
-  height: 3px;
+  left: 15%;
+  right: 15%;
+  height: 6px;
   transform: translateY(-50%);
 }
 
 .spoke-v {
   left: 50%;
   top: 40%;
-  bottom: 20%;
-  width: 3px;
+  bottom: 15%;
+  width: 6px;
   transform: translateX(-50%);
 }
 
@@ -450,26 +515,28 @@ input[type="range"]::-moz-range-thumb {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  background: var(--bg-surface);
+  background: var(--bg-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .steering-angle {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: var(--text-lg);
-  font-weight: 600;
-  color: var(--color-primary);
+  font-weight: 700;
+  color: var(--color-primary-light);
 }
 
 /* === Pedals === */
 .pedals-container {
   display: flex;
-  gap: var(--space-8);
+  gap: var(--space-10);
   justify-content: center;
 }
 
@@ -481,15 +548,16 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .pedal-bar {
-  width: 50px;
-  height: 140px;
+  width: 60px;
+  height: 150px;
   border-radius: var(--radius-lg);
-  background: var(--bg-surface);
-  border: 1px solid var(--divider);
+  background: linear-gradient(180deg, var(--bg-surface), rgba(10, 10, 10, 0.8));
+  border: 2px solid rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
   cursor: pointer;
   touch-action: none;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.5), 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .pedal-fill {
@@ -497,62 +565,71 @@ input[type="range"]::-moz-range-thumb {
   bottom: 0;
   left: 0;
   right: 0;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   transition: height 0.05s;
 }
 
 .pedal-fill.throttle {
   background: var(--gradient-success);
+  box-shadow: 0 0 15px rgba(var(--color-accent-rgb), 0.4);
 }
 
 .pedal-fill.brake {
   background: var(--gradient-danger);
+  box-shadow: 0 0 15px rgba(var(--color-danger-rgb), 0.4);
 }
 
 .pedal-label {
   font-size: var(--text-xs);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 /* === Voice Control === */
 .voice-control-btn {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  background: var(--bg-surface);
-  border: 2px solid var(--divider);
+  background: linear-gradient(135deg, var(--bg-surface-hover), var(--bg-surface));
+  border: 2px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all var(--duration-normal) var(--ease-out);
+  transition: all var(--duration-normal) var(--ease-spring);
   color: var(--text-muted);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
 
 .voice-control-btn svg {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 .voice-control-btn:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.4), 0 0 15px rgba(var(--color-primary-rgb), 0.25);
 }
 
 .voice-control-btn.listening {
-  background: rgba(var(--color-danger-rgb), 0.1);
+  background: rgba(var(--color-danger-rgb), 0.15);
   border-color: var(--color-danger);
   color: var(--color-danger);
   animation: connection-pulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 30px rgba(var(--color-danger-rgb), 0.4);
 }
 
 .voice-transcript {
   font-size: var(--text-sm);
   color: var(--text-muted);
   text-align: center;
-  min-height: 20px;
+  min-height: 22px;
+  font-style: italic;
+  max-width: 320px;
 }
 
 /* === Gesture Visualizer === */
@@ -838,7 +915,7 @@ input[type="range"]::-moz-range-thumb {
   display: flex;
   flex-direction: column;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5),
-              0 0 0 1px rgba(148, 163, 184, 0.08);
+              0 0 0 1px rgba(255, 255, 255, 0.06);
   transform: translateY(20px) scale(0.97);
   transition: transform 0.3s var(--ease-spring);
   overflow: hidden;
@@ -1255,25 +1332,25 @@ input[type="range"]::-moz-range-thumb {
 
   .control-sidebar {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-3);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-4);
   }
 }
 
 @media (max-width: 768px) {
   .dpad-grid {
-    grid-template-columns: repeat(3, 70px);
-    grid-template-rows: repeat(3, 70px);
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
   }
 
   .joystick-base {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
   }
 
   .joystick-handle {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 
   .joystick-container {
@@ -1281,13 +1358,13 @@ input[type="range"]::-moz-range-thumb {
   }
 
   .steering-wheel {
-    width: 170px;
-    height: 170px;
+    width: 190px;
+    height: 190px;
   }
 
   .pedal-bar {
-    height: 110px;
-    width: 44px;
+    height: 130px;
+    width: 50px;
   }
 
   .voice-hints-grid {
@@ -1347,14 +1424,14 @@ input[type="range"]::-moz-range-thumb {
 
 @media (max-width: 480px) {
   .dpad-grid {
-    grid-template-columns: repeat(3, 64px);
-    grid-template-rows: repeat(3, 64px);
-    gap: var(--space-1);
+    grid-template-columns: repeat(3, 72px);
+    grid-template-rows: repeat(3, 72px);
+    gap: var(--space-2);
   }
 
   .dpad-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 
   .dpad-btn {
@@ -1371,24 +1448,24 @@ input[type="range"]::-moz-range-thumb {
   }
 
   .joystick-base {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
   }
 
   .joystick-handle {
-    width: 44px;
-    height: 44px;
+    width: 50px;
+    height: 50px;
   }
 
   .steering-wheel {
-    width: 140px;
-    height: 140px;
-    border-width: 6px;
+    width: 160px;
+    height: 160px;
+    border-width: 8px;
   }
 
   .pedal-bar {
-    height: 90px;
-    width: 40px;
+    height: 110px;
+    width: 44px;
   }
 
   .voice-mode-container {
@@ -1397,13 +1474,13 @@ input[type="range"]::-moz-range-thumb {
   }
 
   .voice-control-btn {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
   }
 
   .voice-control-btn svg {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
   }
 
   .voice-hints-grid {
@@ -1430,17 +1507,17 @@ input[type="range"]::-moz-range-thumb {
   }
 
   .emergency-stop-btn {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
   }
 
   .emergency-stop-btn svg {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
   }
 
   .gauge-svg {
-    width: 110px;
-    height: 70px;
+    width: 120px;
+    height: 80px;
   }
 }

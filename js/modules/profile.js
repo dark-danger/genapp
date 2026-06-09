@@ -22,15 +22,15 @@ export function renderProfile(container) {
           <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:80px;height:80px;">
             <defs>
               <linearGradient id="logo-grad-profile" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#2563EB" />
-                <stop offset="100%" stop-color="#06B6D4" />
+                <stop offset="0%" stop-color="#2E8B57" />
+                <stop offset="100%" stop-color="#3CB371" />
               </linearGradient>
             </defs>
             <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" stroke="url(#logo-grad-profile)" stroke-width="3.5" stroke-linejoin="round" />
             <path d="M44,22 C40,16 30,16 24,20 C18,25 18,35 24,40 C30,45 42,43 44,34 L32,34" stroke="url(#logo-grad-profile)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
-            <circle cx="32" cy="34" r="3.5" fill="#22C55E" />
-            <circle cx="44" cy="22" r="3.5" fill="#2563EB" />
-            <circle cx="24" cy="40" r="3.5" fill="#06B6D4" />
+            <circle cx="32" cy="34" r="3.5" fill="#40E0B0" />
+            <circle cx="44" cy="22" r="3.5" fill="#2E8B57" />
+            <circle cx="24" cy="40" r="3.5" fill="#3CB371" />
           </svg>
         </div>
         <h1 style="font-family:var(--font-display); font-size:var(--text-2xl); font-weight:700; letter-spacing:2px; background:var(--gradient-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:var(--space-1);">GenApp</h1>

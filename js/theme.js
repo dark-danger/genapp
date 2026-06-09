@@ -36,7 +36,7 @@ class ThemeManager {
     if (Capacitor.isNativePlatform()) {
       try {
         const isDark = this.theme === 'dark';
-        await StatusBar.setBackgroundColor({ color: isDark ? '#0F172A' : '#F1F5F9' });
+        await StatusBar.setBackgroundColor({ color: isDark ? '#0A0A0A' : '#F5F5F5' });
         await StatusBar.setStyle({ style: isDark ? Style.Dark : Style.Light });
       } catch (err) {
         console.warn('Native status bar sync failed:', err);

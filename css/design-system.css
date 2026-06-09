@@ -1,66 +1,66 @@
 /* ============================================================
    GenApp Design System — Core Tokens & Utilities
-   Professional IoT Platform Color System
+   Premium IoT Control Center — Sea Green Theme
    ============================================================ */
 
 /* === CSS Custom Properties === */
 :root {
-  /* Primary Brand Palette */
-  --color-primary: #2563EB;
-  --color-primary-rgb: 37, 99, 235;
-  --color-primary-light: #3B82F6;
-  --color-primary-dark: #1D4ED8;
+  /* Primary Brand Palette — Sea Green */
+  --color-primary: #2E8B57;
+  --color-primary-rgb: 46, 139, 87;
+  --color-primary-light: #3CB371;
+  --color-primary-dark: #237048;
 
-  --color-secondary: #06B6D4;
-  --color-secondary-rgb: 6, 182, 212;
+  --color-secondary: #3CB371;
+  --color-secondary-rgb: 60, 179, 113;
 
-  --color-accent: #22C55E;
-  --color-accent-rgb: 34, 197, 94;
+  --color-accent: #40E0B0;
+  --color-accent-rgb: 64, 224, 176;
 
   /* Status Colors */
-  --color-success: #22C55E;
-  --color-success-rgb: 34, 197, 94;
-  --color-danger: #EF4444;
-  --color-danger-rgb: 239, 68, 68;
-  --color-warning: #F59E0B;
-  --color-warning-rgb: 245, 158, 11;
-  --color-info: #06B6D4;
-  --color-info-rgb: 6, 182, 212;
+  --color-success: #2E8B57;
+  --color-success-rgb: 46, 139, 87;
+  --color-danger: #E53E3E;
+  --color-danger-rgb: 229, 62, 62;
+  --color-warning: #E2A832;
+  --color-warning-rgb: 226, 168, 50;
+  --color-info: #3CB371;
+  --color-info-rgb: 60, 179, 113;
 
   /* Background & Surface */
-  --bg-primary: #0F172A;
-  --bg-secondary: #131C31;
-  --bg-surface: #1E293B;
-  --bg-surface-hover: #263347;
-  --bg-elevated: #273449;
-  --bg-overlay: rgba(0, 0, 0, 0.6);
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #111111;
+  --bg-surface: #181818;
+  --bg-surface-hover: #222222;
+  --bg-elevated: #252525;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
 
   /* Text Colors */
   --text-primary: #FFFFFF;
-  --text-secondary: #CBD5E1;
-  --text-muted: #94A3B8;
-  --text-tertiary: #64748B;
-  --text-disabled: #475569;
+  --text-secondary: #D0D0D0;
+  --text-muted: #B0B0B0;
+  --text-tertiary: #808080;
+  --text-disabled: #555555;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  --gradient-accent: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
-  --gradient-success: linear-gradient(135deg, var(--color-accent), #10B981);
-  --gradient-danger: linear-gradient(135deg, var(--color-danger), #DC2626);
-  --gradient-warning: linear-gradient(135deg, var(--color-warning), #D97706);
-  --gradient-cool: linear-gradient(135deg, #6366F1, #8B5CF6);
-  --gradient-sunset: linear-gradient(135deg, #F472B6, #EC4899);
-  --gradient-ocean: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  --gradient-mesh: radial-gradient(at 40% 20%, rgba(37, 99, 235, 0.12) 0px, transparent 50%),
-                   radial-gradient(at 80% 0%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
-                   radial-gradient(at 0% 50%, rgba(34, 197, 94, 0.06) 0px, transparent 50%);
+  --gradient-primary: linear-gradient(135deg, #2E8B57, #3CB371);
+  --gradient-accent: linear-gradient(135deg, #3CB371, #40E0B0);
+  --gradient-success: linear-gradient(135deg, #2E8B57, #3CB371);
+  --gradient-danger: linear-gradient(135deg, #E53E3E, #C53030);
+  --gradient-warning: linear-gradient(135deg, #E2A832, #D69E2E);
+  --gradient-cool: linear-gradient(135deg, #2E8B57, #40E0B0);
+  --gradient-sunset: linear-gradient(135deg, #3CB371, #2E8B57);
+  --gradient-ocean: linear-gradient(135deg, #237048, #3CB371);
+  --gradient-mesh: radial-gradient(at 40% 20%, rgba(46, 139, 87, 0.08) 0px, transparent 50%),
+                   radial-gradient(at 80% 0%, rgba(60, 179, 113, 0.05) 0px, transparent 50%),
+                   radial-gradient(at 0% 50%, rgba(64, 224, 176, 0.04) 0px, transparent 50%);
 
   /* Typography */
   --font-display: 'Orbitron', sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  --text-xs: 0.6875rem;   /* 11px */
+  --text-xs: 0.75rem;     /* 12px */
   --text-sm: 0.8125rem;   /* 13px */
   --text-base: 0.9375rem; /* 15px */
   --text-lg: 1.125rem;    /* 18px */
@@ -86,19 +86,19 @@
   /* Border Radius */
   --radius-sm: 6px;
   --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-2xl: 32px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
-  --shadow-glow-primary: 0 0 20px rgba(var(--color-primary-rgb), 0.3);
-  --shadow-glow-secondary: 0 0 20px rgba(var(--color-secondary-rgb), 0.3);
-  --shadow-glow-accent: 0 0 20px rgba(var(--color-accent-rgb), 0.3);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-glow-primary: 0 0 20px rgba(46, 139, 87, 0.3);
+  --shadow-glow-secondary: 0 0 20px rgba(60, 179, 113, 0.3);
+  --shadow-glow-accent: 0 0 20px rgba(64, 224, 176, 0.3);
 
   /* Z-index */
   --z-dropdown: 100;
@@ -124,10 +124,10 @@
   --content-max-width: 1400px;
 
   /* Glassmorphism */
-  --glass-bg: rgba(30, 41, 59, 0.6);
-  --glass-border: rgba(148, 163, 184, 0.1);
+  --glass-bg: rgba(24, 24, 24, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.06);
   --glass-blur: blur(20px);
-  --glass-bg-hover: rgba(30, 41, 59, 0.8);
+  --glass-bg-hover: rgba(34, 34, 34, 0.8);
 }
 
 /* === Reset & Base === */
@@ -189,8 +189,8 @@ ul, ol {
 
 /* === Scrollbar === */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -198,17 +198,17 @@ ul, ol {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* === Selection === */
 ::selection {
-  background: rgba(var(--color-primary-rgb), 0.3);
+  background: rgba(46, 139, 87, 0.3);
   color: #fff;
 }
 
@@ -274,10 +274,10 @@ ul, ol {
 }
 
 .glass-strong {
-  background: rgba(30, 41, 59, 0.8);
+  background: rgba(24, 24, 24, 0.85);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
-  border: 1px solid rgba(148, 163, 184, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
 }
 
@@ -310,7 +310,7 @@ ul, ol {
 
 /* === Page Layout === */
 .page-header {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
 }
 
 .page-title {
@@ -333,8 +333,8 @@ ul, ol {
 
 /* === Status Indicators === */
 .status-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   display: inline-block;
   flex-shrink: 0;
@@ -343,20 +343,20 @@ ul, ol {
 .status-dot.online,
 .status-dot.connected {
   background: var(--color-success);
-  box-shadow: 0 0 8px rgba(var(--color-success-rgb), 0.6);
+  box-shadow: 0 0 8px rgba(46, 139, 87, 0.6);
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
 .status-dot.offline,
 .status-dot.disconnected {
   background: var(--color-danger);
-  box-shadow: 0 0 8px rgba(var(--color-danger-rgb), 0.4);
+  box-shadow: 0 0 8px rgba(229, 62, 62, 0.4);
 }
 
 .status-dot.warning,
 .status-dot.connecting {
   background: var(--color-warning);
-  box-shadow: 0 0 8px rgba(var(--color-warning-rgb), 0.6);
+  box-shadow: 0 0 8px rgba(226, 168, 50, 0.6);
   animation: pulse-glow-warning 1.5s ease-in-out infinite;
 }
 
@@ -374,7 +374,7 @@ ul, ol {
   width: 80px;
   height: 80px;
   border-radius: var(--radius-xl);
-  background: rgba(var(--color-primary-rgb), 0.1);
+  background: rgba(46, 139, 87, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
